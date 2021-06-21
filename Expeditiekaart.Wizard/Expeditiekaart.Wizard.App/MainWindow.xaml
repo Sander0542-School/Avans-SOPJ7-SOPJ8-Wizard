@@ -8,42 +8,56 @@
         Title="Expeditiekaart Wizard" Height="450" Width="800">
     <Grid Margin="8">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        
+
         <StackPanel Orientation="Vertical">
             <GroupBox>
                 <GroupBox.Header>Locatie</GroupBox.Header>
-                
+
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Path"/>
-                    <TextBox x:Name="TbLocationPath"></TextBox>
+                    <Label Content="Path" />
+                    <DockPanel LastChildFill="True">
+                        <Button DockPanel.Dock="Right" Click="PickLocationFolder" Margin="4,0,0,0" Padding="4,0"
+                                Content="..." />
+                        <TextBox x:Name="TbLocationPath" DockPanel.Dock="Left" HorizontalAlignment="Stretch" Text="C:\Users\sande\Downloads\Temp\1" />
+                    </DockPanel>
                 </StackPanel>
             </GroupBox>
-            
+
             <GroupBox>
                 <GroupBox.Header>Database</GroupBox.Header>
-                
+
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Host"/>
-                    <TextBox x:Name="TbDatabaseHost"></TextBox>
-                    
-                    <Label Content="Port"/>
-                    <TextBox x:Name="TbDatabasePort"></TextBox>
-                    
-                    <Label Content="Username"/>
-                    <TextBox x:Name="TbDatabaseUsername"></TextBox>
-                    
-                    <Label Content="Password"/>
-                    <TextBox x:Name="TbDatabasePassword"></TextBox>
-                    
-                    <Label Content="Database"/>
-                    <TextBox x:Name="TbDatabaseDatabase"></TextBox>
+                    <Label Content="Host" />
+                    <TextBox x:Name="TbDatabaseHost" />
+
+                    <Label Content="Port" />
+                    <TextBox x:Name="TbDatabasePort" />
+
+                    <Label Content="Username" />
+                    <TextBox x:Name="TbDatabaseUsername" />
+
+                    <Label Content="Password" />
+                    <TextBox x:Name="TbDatabasePassword" />
+
+                    <Label Content="Database" />
+                    <TextBox x:Name="TbDatabaseDatabase" />
                 </StackPanel>
             </GroupBox>
-            
-            <Button Click="InstallApplication" Content="Install"/>
+
+            <Button Click="InstallApplication" Content="Install" />
         </StackPanel>
+
+        <DockPanel Grid.Column="1" LastChildFill="True">
+            <GroupBox VerticalAlignment="Stretch">
+                <GroupBox.Header>Progress</GroupBox.Header>
+
+                <StackPanel Orientation="Vertical" CanVerticallyScroll="True">
+                    <TextBlock x:Name="tbProgress" />
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
     </Grid>
 </Window>
