@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using Expeditiekaart.Wizard.App.Installers;
@@ -14,7 +15,7 @@ namespace Expeditiekaart.Wizard.App
     public partial class MainWindow : Window
     {
         private FolderBrowserDialog _locationFolderDialog;
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -23,6 +24,8 @@ namespace Expeditiekaart.Wizard.App
             {
                 ShowNewFolderButton = true
             };
+
+            TbLocationPath.Text = $"{Path.GetPathRoot(Environment.SystemDirectory)}";
         }
 
         private async void InstallApplication(object sender, RoutedEventArgs e)
