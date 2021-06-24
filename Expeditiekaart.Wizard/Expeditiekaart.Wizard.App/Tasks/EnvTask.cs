@@ -11,9 +11,11 @@ namespace Expeditiekaart.Wizard.App.Tasks
             ProgressWriter.AddMessage("Creating .env file");
             string[] lines =
             {
+                "APP_NAME=Expeditiekaart",
                 "APP_URL=expeditiekaart.nl",
-                "DB_CONNECTION=mysql",
+                "APP_KEY=",
                 "",
+                "DB_CONNECTION=mysql",
                 $"DB_HOST={Options.Database.Host}",
                 $"DB_PORT={Options.Database.Port}",
                 $"DB_USERNAME={Options.Database.Username}",
