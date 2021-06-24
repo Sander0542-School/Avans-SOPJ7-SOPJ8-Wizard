@@ -21,7 +21,7 @@
                     <DockPanel LastChildFill="True">
                         <Button DockPanel.Dock="Right" Click="PickLocationFolder" Margin="4,0,0,0" Padding="4,0"
                                 Content="..." />
-                        <TextBox x:Name="TbLocationPath" DockPanel.Dock="Left" HorizontalAlignment="Stretch" Text="C:\Users\sande\Downloads\Temp\1" />
+                        <TextBox x:Name="TbLocationPath" DockPanel.Dock="Left" HorizontalAlignment="Stretch" />
                     </DockPanel>
                 </StackPanel>
             </GroupBox>
